@@ -6,10 +6,15 @@ export class Personagem {
     tipo
     descricao
 
-    constructor(nome, level) {
+    constructor(nome) {
         this.nome = nome
-        this.#level = level
+        this.#level = 1
     }
+
+    get level() {
+        return this.#level
+    }
+
     obterInsignia() {
         if (this.#level >= 5) {
             return `${this.constructor.tipo} implacavel `;
